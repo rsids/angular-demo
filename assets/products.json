@@ -1,0 +1,11 @@
+{
+    "result": [
+        {
+            "id": 1,
+            "name": "",
+            "price": 1.99,
+            "image": "/assets/img/product-1.jpg",
+            "description": "Desc"
+        }
+    ]
+}

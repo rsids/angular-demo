@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<div class="container" ng-controller="MainController as mainCtrl">
+    <div class="row">
+        <h1 class="col-sm-12">ng-repeat</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Index</th>
+                <th>Naam</th>
+                <th>E-mail</th>
+                <th>Telefoon</th>
+                <th>Adres</th>
+                <th>Stad</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <!-- For every item in the array, repeat the <tr>. The item in the array is referenced as 'row' -->
+            <tr ng-repeat='row in mainCtrl.data'>
+                <!-- We can get the index of the array with $index -->
+                <td>{{$index}}</td>
+                <td>{{row.name}}</td>
+                <td><a href="mailto:{{row.email}}">{{row.email}}</a></td>
+                <td>{{row.phone}}</td>
+                <td>{{row.address}}</td>
+                <td>{{row.city}}</td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+        <div class="col-sm-12">
+            <pre>{{mainCtrl.data|json}}</pre>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
+<script>
+    angular.module('demo',[]).controller('MainController', function() {
+        this.data = [
+            {
+                "name": "Kaitlin Lee",
+                "email": "Sed@felis.co.uk",
+                "phone": "+31-483-637-858",
+                "address": "Ap #115-2680 Malesuada. St.",
+                "city": "Wanaka"
+            },
+            {
+                "name": "Nathan Goodwin",
+                "email": "Etiam@dictumPhasellus.com",
+                "phone": "+31-973-462-555",
+                "address": "P.O. Box 974, 9504 Orci Av.",
+                "city": "Tumbler Ridge"
+            },
+            {
+                "name": "Louis Cannon",
+                "email": "ac@purus.org",
+                "phone": "+31-512-650-074",
+                "address": "Ap #192-3880 Commodo St.",
+                "city": "Tarrasa"
+            },
+            {
+                "name": "Nichole Dominguez",
+                "email": "lectus@Sedpharetra.com",
+                "phone": "+31-736-215-692",
+                "address": "P.O. Box 765, 5838 Rutrum St.",
+                "city": "Murcia"
+            },
+            {
+                "name": "Sonia Mccray",
+                "email": "habitant.morbi.tristique@metusAeneansed.ca",
+                "phone": "+31-225-430-485",
+                "address": "173-596 Lorem Rd.",
+                "city": "Bassiano"
+            },
+            {
+                "name": "Keith Parks",
+                "email": "consectetuer.euismod@vestibulumnec.edu",
+                "phone": "+31-429-345-057",
+                "address": "195-2688 Eu Street",
+                "city": "Anderlues"
+            }
+        ];
+    })
+</script>
+</body>
+</html>

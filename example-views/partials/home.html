@@ -1,0 +1,16 @@
+<div class="col-xs-12">
+
+
+    <!-- Show 'home' when the profile hasn't been set -->
+    <div ng-show="homeCtrl.profile == null">
+        <h2>Home</h2>
+    </div>
+
+    <!-- Welcome the user if a profile has been set -->
+    <div ng-show="homeCtrl.profile !== null">
+        <h2>Welkom {{homeCtrl.profile.name}}</h2>
+    </div>
+</div>
+<div class="col-xs-6">
+    <p>Solitudo de primus mens, quaestio humani generis! Pol, acipenser! Cur spatii credere? Torquiss assimilant in asopus!</p>
+</div>
