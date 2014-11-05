@@ -27,7 +27,9 @@
             <tbody>
             <!-- For every item in the array, repeat the <tr>. The item in the array is referenced as 'row' -->
             <tr ng-repeat='row in mainCtrl.data'>
-                <!-- We can get the index of the array with $index -->
+                <!-- We can get the index of the array with $index
+                    Additionally, we can get $first, $middle, $last, $odd and $even
+                -->
                 <td>{{$index}}</td>
                 <td>{{row.name}}</td>
                 <td><a href="mailto:{{row.email}}">{{row.email}}</a></td>

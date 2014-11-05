@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="nl">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+</head>
+<body ng-app>
+
+<div class="container form-horizontal">
+
+    <div class="row">
+
+        <div class="col-xs-12">
+            <h1>Binding</h1>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="form-group">
+            <label for="input_r" class="col-sm-2 control-label">R</label>
+
+            <div class="col-sm-6">
+                <input type="range" min="0" max="255" value="0" ng-model="red" id="input_r">
+            </div>
+            <div class="col-sm-1">
+                <input type="text" ng-model="red">
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="form-group">
+            <label for="input_g" class="col-sm-2 control-label">G</label>
+
+            <div class="col-sm-6">
+                <input type="range" min="0" max="255" value="0" ng-model="green" id="input_g">
+            </div>
+            <div class="col-sm-1">
+                <input type="text" ng-model="green">
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="form-group">
+            <label for="input_b" class="col-sm-2 control-label">B</label>
+
+            <div class="col-sm-6">
+                <input type="range" min="0" max="255" value="0" ng-model="blue" id="input_b">
+            </div>
+            <div class="col-sm-1">
+                <input type="text" ng-model="blue">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-6">
+
+
+            <!-- Element directive -->
+            <div style="background:rgb({{red||0}},{{green||0}},{{blue||0}}); width: 100%; height:100px"></div>
+
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+
+<!-- Load angular -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
+
+
+</body>
+</html>
