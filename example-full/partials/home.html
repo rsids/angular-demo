@@ -1,0 +1,42 @@
+<div class="col-xs-12">
+
+    <h2>Profiles</h2>
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label for="filter">Naam</label>
+            <input type="text" id="filter" class="form-control" ng-model="homeCtrl.filter">
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th ng-click="homeCtrl.order = 'name'">Naam</th>
+            <th ng-click="homeCtrl.order = 'email'">E-mail</th>
+            <th ng-click="homeCtrl.order = 'created'">Datum</th>
+            <th ng-click="homeCtrl.order = 'balance'">Saldo</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <!-- For every item in the array, repeat the <tr>. The item in the array is referenced as 'row' -->
+        <tr ng-repeat='row in homeCtrl.profiles | orderBy: homeCtrl.order | filter: homeCtrl.filter'>
+            <!-- We can get the index of the array with $index -->
+            <td>{{row.id}}</td>
+            <td>{{row.name}}</td>
+            <td><a href="mailto:{{row.email}}">{{row.email}}</a></td>
+            <!-- multiply the timestamp by 1000, since javascript measures dates in milliseconds -->
+            <td>{{row.created * 1000  | date:'dd-MM-yyyy'}}</td>
+
+            <td>{{row.balance | currency}}</td>
+
+            <td><a href="#/profile/{{row.id}}" class="btn btn-small" icon="pencil"></a> </td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>

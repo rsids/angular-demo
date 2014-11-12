@@ -1,0 +1,30 @@
+<div class="col-xs-12">
+    <h2>Profile</h2>
+</div>
+<div class="col-xs-4">
+
+    <div class="form-group">
+        <label for="name">Naam</label>
+        <input class="form-control" type="text" id="name" ng-model="profileCtrl.profile.name">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+
+        <input class="form-control" type="email" id="email" ng-model="profileCtrl.profile.email">
+    </div>
+
+    <div class="form-group">
+        <label for="balance">Saldo</label>
+
+        <input class="form-control" type="number" id="balance" ng-model="profileCtrl.profile.balance">
+    </div>
+
+    <div class="form-group">
+
+        <button class="btn btn-primary" icon="floppy-disk" ng-click="profileCtrl.saveData()">Opslaan</button>
+
+        <button class="btn btn-danger" icon="trash" ng-click="profileCtrl.deleteData()">Verwijderen</button>
+    </div>
+
+</div>

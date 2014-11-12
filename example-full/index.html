@@ -2,7 +2,7 @@
 <html ng-app="demo">
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Full Example</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -16,7 +16,6 @@
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" ng-class="{active : mainCtrl.$state.current.name === 'home'}"><a href="#/" role="tab" data-toggle="tab">Home</a></li>
             <li role="presentation" ng-class="{active : mainCtrl.$state.current.name === 'profile'}"><a href="#/profile" role="tab" data-toggle="tab">Profile</a></li>
-            <li role="presentation" ng-class="{active : mainCtrl.$state.current.name === 'settings'}"><a href="#/settings" role="tab" data-toggle="tab">Settings</a></li>
         </ul>
         <span class="pull-right">{{mainCtrl.$state.current.name}}</span>
     </div>
@@ -37,9 +36,8 @@
 <script src="js/controllers/MainController.js"></script>
 <script src="js/controllers/HomeController.js"></script>
 <script src="js/controllers/ProfileController.js"></script>
-<script src="js/controllers/SettingsController.js"></script>
 
-<!-- Directies -->
+<!-- Directives -->
 <script src="js/directives/IconButton.js"></script>
 
 
