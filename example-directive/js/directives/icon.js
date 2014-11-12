@@ -1,6 +1,3 @@
-/**
- * Created by ids on 04/11/14.
- */
 (function () {
 
     /**
@@ -29,6 +26,6 @@
         element.prepend('<i class="glyphicon glyphicon-' + attr.icon + '"></i>&nbsp;');
     }
 
-    // Register the directive under the name 'icon'
+    // Register the directive in our demo module under the name 'icon'
     angular.module('demo').directive('icon', icon);
 }());

@@ -63,8 +63,19 @@
 
         this.filter = '';
         this.myFilter = function(data) {
-            console.log('filter:',_this.filter)
-            return _this.filter === '' || data.name.indexOf(_this.filter) != -1;
+
+            // If filter is empty, don't filter
+            if(_this.filter === '') {
+                return true;
+            }
+
+            // If name contains filter, return true
+            if(data.name.indexOf(_this.filter) != -1) {
+                return true;
+            }
+
+            // Else return false
+            return false;
         }
 
         this.data = [

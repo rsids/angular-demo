@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!--
+        Loads data from an external file
+    -->
+</head>
+<body>
+
+<div class="container" ng-controller="MainController as mainCtrl">
+    <div class="row">
+        <h1 class="col-sm-12">Services</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Index</th>
+                <th>Naam</th>
+                <th>E-mail</th>
+                <th>Telefoon</th>
+                <th>Adres</th>
+                <th>Stad</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <!-- For every item in the array, repeat the <tr>. The item in the array is referenced as 'row' -->
+            <tr ng-repeat='row in mainCtrl.profiles'>
+                <!-- We can get the index of the array with $index
+                    Additionally, we can get $first, $middle, $last, $odd and $even
+                -->
+                <td>{{$index}}</td>
+                <td>{{row.name}}</td>
+                <td><a href="mailto:{{row.email}}">{{row.email}}</a></td>
+                <td>{{row.phone}}</td>
+                <td>{{row.address}}</td>
+                <td>{{row.city}}</td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+        <div class="col-sm-12">
+            <!-- This is the actual loaded data -->
+            <pre>{{mainCtrl.profiles|json}}</pre>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/services/ProfileService.js"></script>
+<script src="js/controllers/MainController.js"></script>
+</body>
+</html>
