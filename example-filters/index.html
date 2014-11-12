@@ -5,12 +5,26 @@
     <title></title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 </head>
-<body ng-app="demo"">
+<body ng-app="demo">
 
     <div class="container">
 
         <h1>Filters</h1>
 
+        <!-- Filters transform variables before displaying them. A filter can be applied to an expression by
+        adding a pipe (|) after the expression, followed by the name of the filter. Multiple filters can be applied
+        to 1 expression. Filters accept arguments by adding a colon and the argument.
+
+        Example:
+
+        {{ name | lowercase }} Transforms the name into lowercase characters
+
+        {{ theDate | date }} Parses theDate into a human readable date
+
+        {{ theDate | date:'dd-mm-YYYY' }} Parses theDate in the given format
+
+
+        -->
 
         <!-- Echo the entered name, reversed. Add {amount} exclamation marks -->
         <h2>Hello world, {{name |reverse}} {{'!'|repeat:amount}}</h2>
@@ -36,10 +50,14 @@
             <label for="cost">Bedrag</label>
             <!--
                 Build in filter. The used currency is based on the system locale of the user.
-                To force a specific locale (e.g. Dutch), load the desired locale after the main angular file.
+                You can add the currency symbol using {{cost | currency: "€"}}, or force a specific locale (e.g. Dutch)
+                throughout your app by loading the desired locale after the main angular file.
                 A list of available locales can be found at https://github.com/angular/angular.js/tree/master/src/ngLocale
+
+                Other build in filters include:
+                date, uppercase, lowercase,
             -->
-            {{cost | currency}}
+            {{ cost | currency }}
         </div>
 
     </div>
