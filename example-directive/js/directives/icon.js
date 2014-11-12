@@ -15,6 +15,7 @@
 
     /**
      * Inside the link function you can do your dom manipulation
+     * @ngInject
      * @param $scope The scope of this directive (if it has it own scope) or the scope of the controller
      * @param element The element where this directive applies to
      * @param attr All attributes assigned to element

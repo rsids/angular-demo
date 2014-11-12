@@ -13,6 +13,11 @@
 
         return function(input, multiplier) {
 
+            // Check if input is valid
+            if(input === undefined)
+                return '';
+
+
             var str = '';
 
             // Repeat the input

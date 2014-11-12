@@ -5,7 +5,7 @@
     <title></title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 </head>
-<body ng-app="demo">
+<body ng-app="demo"">
 
     <div class="container">
 
@@ -17,13 +17,29 @@
 
         <div class="form-group">
             <label for="name">Naam</label>
-            <input type="text" id="name" ng-model="name">
+            <input class="form-control" type="text" id="name" ng-model="name">
         </div>
 
         <div class="form-group">
             <label for="amount">Aantal</label>
 
-            <input type="number" id="amount" ng-model="amount">
+            <input class="form-control" type="number" id="amount" ng-model="amount">
+        </div>
+
+        <div class="form-group">
+            <label for="cost">Bedrag</label>
+
+            <input class="form-control" type="number" id="cost" ng-model="cost">
+        </div>
+
+        <div class="form-group">
+            <label for="cost">Bedrag</label>
+            <!--
+                Build in filter. The used currency is based on the system locale of the user.
+                To force a specific locale (e.g. Dutch), load the desired locale after the main angular file.
+                A list of available locales can be found at https://github.com/angular/angular.js/tree/master/src/ngLocale
+            -->
+            {{cost | currency}}
         </div>
 
     </div>

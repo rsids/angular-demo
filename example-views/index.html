@@ -18,6 +18,9 @@
             <li role="presentation" ng-class="{active : mainCtrl.$state.current.name === 'profile'}"><a href="#/profile" role="tab" data-toggle="tab">Profile</a></li>
             <li role="presentation" ng-class="{active : mainCtrl.$state.current.name === 'settings'}"><a href="#/settings" role="tab" data-toggle="tab">Settings</a></li>
         </ul>
+        <span class="pull-right">{{mainCtrl.$state.name}}</span>
+    </div>
+    <div class="row">
 
         <div class="tab-content">
             <div ui-view></div>

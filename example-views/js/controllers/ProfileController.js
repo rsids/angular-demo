@@ -4,6 +4,7 @@
     function ProfileController() {
         var _this = this;
 
+
         _this.profile = {name: 'Ids Klijnsma',
                         email: 'ids.klijnsma@clockwork.nl',
                         phone: '+31 6 103 73 574'};
@@ -36,6 +37,7 @@
          */
         function activate() {
 
+            // Call the profileService and set the data in our scope
             ProfileService.getProfile().then(function(data) {
                 _this.profile = data;
             });
@@ -45,7 +47,7 @@
          * Save the data
          */
         function onSaveData() {
-console.log("Saving profile: ", _this.profile);
+            // Save the data, and set the saved data in our scope
             ProfileService.setProfile(_this.profile).then(function(data) {
                 _this.profile = data;
             });
@@ -56,6 +58,7 @@ console.log("Saving profile: ", _this.profile);
          */
         function onDeleteData() {
 
+            // Set the profile to an empty object
             ProfileService.setProfile(null).then(function(data) {
                 _this.profile = data;
             });

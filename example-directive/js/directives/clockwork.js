@@ -12,6 +12,8 @@
         return {
             // Restrict a tells angular that this directive is only valid as attribute
             restrict: 'E',
+
+            // This is our template. Basically, replace every <clockwork> tag we find with this template.
             template: '<img src="assets/visualLogoCW.png" />'
         }
     }

@@ -23,17 +23,17 @@
             <thead>
             <tr>
                 <th>Index</th>
-                <th>Naam</th>
-                <th>E-mail</th>
-                <th>Telefoon</th>
-                <th>Adres</th>
-                <th>Stad</th>
+                <th ng-click="mainCtrl.order = 'name'">Naam</th>
+                <th ng-click="mainCtrl.order = 'email'">E-mail</th>
+                <th ng-click="mainCtrl.order = 'phone'">Telefoon</th>
+                <th ng-click="mainCtrl.order = 'address'">Adres</th>
+                <th ng-click="mainCtrl.order = 'city'">Stad</th>
             </tr>
             </thead>
 
             <tbody>
             <!-- For every item in the array, repeat the <tr>. The item in the array is referenced as 'row' -->
-            <tr ng-repeat='row in mainCtrl.data|filter:mainCtrl.myFilter'>
+            <tr ng-repeat='row in mainCtrl.data | filter:mainCtrl.myFilter | orderBy: mainCtrl.order'>
                 <!-- We can get the index of the array with $index -->
                 <td>{{$index}}</td>
                 <td>{{row.name}}</td>
@@ -61,7 +61,18 @@
     angular.module('demo',[]).controller('MainController', function() {
         var _this = this;
 
+        // By default, our filter is empty
         this.filter = '';
+
+        // Set the default order to 'name';
+        this.order = 'name';
+
+        /**
+         * Filter function for the array. Return true for every item which matches the condition (and should thus be shown)
+         * Return false for every item which should be hidden
+         * @param data
+         * @returns {boolean}
+         */
         this.myFilter = function(data) {
 
             // If filter is empty, don't filter
