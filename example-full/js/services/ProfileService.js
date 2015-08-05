@@ -11,6 +11,11 @@
 
         var profiles;
 
+        /**
+         * Delete a profile by it's id
+         * @param id
+         * @returns {*}
+         */
         function deleteProfile(id) {
             var defer = $q.defer();
 

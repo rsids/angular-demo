@@ -1,5 +1,12 @@
 
 (function() {
+
+    /**
+     * Handles editing and deleting of profiles
+     * @param $state
+     * @param ProfileService
+     * @constructor
+     */
     function ProfileController($state, ProfileService) {
 
         /**
@@ -46,6 +53,8 @@
 
             // Set the profile to an empty object
             ProfileService.deleteProfile(_this.profile.id).then(function() {
+
+                // On result, navigate to the home state
                 $state.go('home');
             });
         }

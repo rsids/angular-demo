@@ -33,7 +33,7 @@
 
             <tbody>
             <!-- For every item in the array, repeat the <tr>. The item in the array is referenced as 'row' -->
-            <tr ng-repeat='row in mainCtrl.data | filter:mainCtrl.myFilter | orderBy: mainCtrl.order'>
+            <tr ng-repeat='row in mainCtrl.data | filter:mainCtrl.filter | orderBy: mainCtrl.order'>
                 <!-- We can get the index of the array with $index -->
                 <td>{{$index}}</td>
                 <td>{{row.name}}</td>
@@ -67,27 +67,6 @@
         // Set the default order to 'name';
         this.order = 'name';
 
-        /**
-         * Filter function for the array. Return true for every item which matches the condition (and should thus be shown)
-         * Return false for every item which should be hidden
-         * @param data
-         * @returns {boolean}
-         */
-        this.myFilter = function(data) {
-
-            // If filter is empty, don't filter
-            if(_this.filter === '') {
-                return true;
-            }
-
-            // If name contains filter, return true
-            if(data.name.indexOf(_this.filter) != -1) {
-                return true;
-            }
-
-            // Else return false
-            return false;
-        }
 
         this.data = [
             {
