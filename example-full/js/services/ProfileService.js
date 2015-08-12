@@ -17,6 +17,7 @@
          * @returns {*}
          */
         function deleteProfile(id) {
+            // Create the promise, when the profiles are fetched, resolve it
             var defer = $q.defer();
 
             // Call getProfiles. If the profiles have been loaded before, it returns profiles, otherwise, it'll first

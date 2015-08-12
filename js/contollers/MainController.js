@@ -10,9 +10,9 @@
     function MainController() {
 
         // Create a reference to ourselves
-        var _this = this;
+        var vm = this;
 
-        _this.name = '';
+        vm.name = '';
     }
 
     angular.module('demoApp').controller('MainController', MainController);

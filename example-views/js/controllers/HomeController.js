@@ -6,8 +6,8 @@
      * @constructor
      */
     function HomeController(ProfileService) {
-        var _this = this;
-        _this.profile = {};
+        var vm = this;
+        vm.profile = {};
 
 
         activate();
@@ -17,7 +17,7 @@
             // Get the (new) profile. Any changes made in the ProfileController are shared with the HomeController
             // through the ProfileService
             ProfileService.getProfile().then(function(data) {
-                _this.profile = data;
+                vm.profile = data;
             })
         }
     }

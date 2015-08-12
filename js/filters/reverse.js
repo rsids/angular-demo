@@ -4,6 +4,10 @@
 (function() {
 
 
+    /**
+     * Reverses a string
+     * @returns {Function}
+     */
     function reverseIt() {
 
         return function(input) {

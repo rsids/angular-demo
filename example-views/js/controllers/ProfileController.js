@@ -24,11 +24,11 @@
          * @type {ProfileController}
          * @private
          */
-        var _this = this;
+        var vm = this;
 
-        _this.saveData = onSaveData;
-        _this.deleteData = onDeleteData;
-        _this.profile = {};
+        vm.saveData = onSaveData;
+        vm.deleteData = onDeleteData;
+        vm.profile = {};
 
         activate();
 
@@ -39,7 +39,7 @@
 
             // Call the profileService and set the data in our scope
             ProfileService.getProfile().then(function(data) {
-                _this.profile = data;
+                vm.profile = data;
             });
         }
 
@@ -48,8 +48,8 @@
          */
         function onSaveData() {
             // Save the data, and set the saved data in our scope
-            ProfileService.setProfile(_this.profile).then(function(data) {
-                _this.profile = data;
+            ProfileService.setProfile(vm.profile).then(function(data) {
+                vm.profile = data;
             });
         }
 
@@ -60,7 +60,7 @@
 
             // Set the profile to an empty object
             ProfileService.setProfile(null).then(function(data) {
-                _this.profile = data;
+                vm.profile = data;
             });
         }
     }

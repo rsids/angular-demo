@@ -2,7 +2,7 @@
     function MainController(ProfileService) {
 
         // Store a reference to our controller.
-        var _this = this;
+        var vm = this;
 
 
         activate();
@@ -23,7 +23,7 @@
             // it executes the function inside 'then'. Which puts the data on our scope,
             // so the list gets populated.
             ProfileService.getProfiles().then(function(data) {
-                _this.profiles = data.data.result;
+                vm.profiles = data.data.result;
             })
         }
     }

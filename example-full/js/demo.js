@@ -35,7 +35,7 @@
                 templateUrl: "partials/profile.html",
                 controller: 'ProfileController',
                 controllerAs: 'profileCtrl'
-            });;
+            });
     }
 
     // Initialize our app, this app has an external dependency, called ui.router. You can load multiple dependencies

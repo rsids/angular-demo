@@ -1,5 +1,7 @@
 (function() {
+
     function MainController($state) {
+
         this.$state = $state;
 
     }

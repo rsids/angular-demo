@@ -14,11 +14,11 @@
          * @type {ProfileController}
          * @private
          */
-        var _this = this;
+        var vm = this;
 
-        _this.saveData = onSaveData;
-        _this.deleteData = onDeleteData;
-        _this.profile = {};
+        vm.saveData = onSaveData;
+        vm.deleteData = onDeleteData;
+        vm.profile = {};
 
         activate();
 
@@ -29,7 +29,7 @@
             if($state.params.hasOwnProperty('id')) {
                 // Call the profileService and set the data in our scope
                 ProfileService.getProfile($state.params.id).then(function(data) {
-                    _this.profile = data;
+                    vm.profile = data;
                 });
 
             }
@@ -40,9 +40,11 @@
          */
         function onSaveData() {
             // Save the data, and set the saved data in our scope
-            _this.profile.created = new Date().getTime() / 1000;
-            ProfileService.setProfile(_this.profile).then(function(data) {
-                _this.profile = data;
+            vm.profile.created = new Date().getTime() / 1000;
+
+            // Call profile service to save the data
+            ProfileService.setProfile(vm.profile).then(function(data) {
+                vm.profile = data;
             });
         }
 
@@ -52,7 +54,7 @@
         function onDeleteData() {
 
             // Set the profile to an empty object
-            ProfileService.deleteProfile(_this.profile.id).then(function() {
+            ProfileService.deleteProfile(vm.profile.id).then(function() {
 
                 // On result, navigate to the home state
                 $state.go('home');

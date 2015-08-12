@@ -5,27 +5,22 @@
 
 
     /**
-     * A filter returns a function which accepts an input string and optionally some extra arguments
-     * In this case, it accepts multiplier as an argument
+     * Repeats the input by multiplier times
      * @returns {Function}
      */
     function repeat() {
 
+        /**
+         * @param {string} input The input to repeat
+         * @param {int} multiplier The number of times to repeat the input
+         * @repeat {string} the multiplied string
+         */
         return function(input, multiplier) {
-
-            // Check if input is valid
-            if(input === undefined)
-                return '';
-
-
             var str = '';
-
-            // Repeat the input
             while(--multiplier >= 0) {
                 str += input;
             }
 
-            // Return the repeated input
             return str;
         }
 

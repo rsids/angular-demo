@@ -6,9 +6,9 @@
      * @constructor
      */
     function HomeController(ProfileService) {
-        var _this = this;
-        _this.profiles = [];
-        _this.order = 'id';
+        var vm = this;
+        vm.profiles = [];
+        vm.order = 'id';
 
 
         activate();
@@ -17,7 +17,7 @@
 
             // Get all the profiles
             ProfileService.getProfiles().then(function(data) {
-                _this.profiles = data;
+                vm.profiles = data;
             })
         }
     }
